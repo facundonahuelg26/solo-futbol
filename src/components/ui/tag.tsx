@@ -4,11 +4,6 @@ interface TagProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick: () => void
   className?: string
 }
-// interface TagProps {
-//   onClick: () => void
-//   className: string
-//   children: React.ReactNode
-// }
 
 const Tag = ({ onClick, className, children, ...props }: TagProps) => {
   return (
