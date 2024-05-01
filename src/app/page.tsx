@@ -131,11 +131,11 @@ const page = () => {
         <div className='mb-10 shrink-0 border-t lg:mx-4 lg:mb-0 lg:border-t-0' />
         <div className='relative flex-1'>
           <div className='z-10 mb-3 items-center gap-5 space-y-5  py-10 lg:sticky lg:flex lg:space-y-0'>
-            <div className='flex flex-1 items-center gap-2 rounded-full border border-neutral-300 px-4'>
+            <div className='flex flex-1 items-center gap-2 rounded-md border border-neutral-300 px-4'>
               <Search className='text-2xl text-neutral-500' />
               <Input
                 type='password'
-                rounded='rounded-full'
+                rounded='rounded-md'
                 placeholder='Buscar...'
                 sizeClass='h-12 px-0 py-3'
                 className='border-transparent bg-transparent placeholder:text-neutral-500 focus:border-transparent'

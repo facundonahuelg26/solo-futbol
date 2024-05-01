@@ -21,16 +21,14 @@ const ProductCard: FC<ProductCardProps> = ({
 }) => {
   return (
     <div
-      className={`transitionEffect relative rounded-2xl p-3 shadow-md ${className}`}
+      className={`transitionEffect relative rounded-md p-3 shadow-md ${className}`}
     >
-      <div className=' overflow-hidden rounded-2xl'>
+      <div className=' overflow-hidden rounded-md'>
         {product.justIn && (
-          <div className='absolute left-6 top-0 rounded-b-lg bg-primary px-3 py-2 text-sm uppercase text-white shadow-md'>
+          <div className='absolute left-6 top-0 rounded-md bg-primary px-3 py-2 text-sm uppercase text-white shadow-md'>
             Just In!
           </div>
         )}
-        {/* <LikeButton className="absolute right-2 top-2" /> */}
-        {/* <div className='w-full h-[360px] bg-red-500 relative'> */}
         <Link
           href={`/products/${product.slug}`}
           className='w-full h-[360px] block relative'
@@ -44,7 +42,6 @@ const ProductCard: FC<ProductCardProps> = ({
             className='size-full object-cover'
           />
         </Link>
-        {/* </div> */}
       </div>
       <div className='mt-3'>
         <div className='flex items-center justify-between'>

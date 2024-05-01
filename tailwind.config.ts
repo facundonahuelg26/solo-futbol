@@ -27,9 +27,10 @@ const config: Config = {
     },
     colors: {
       transparent: 'transparent',
-      blue: '#172554',
+      sky: '#7dd3fc',
+      blue: { light: '#2563eb', DEFAULT: '#172554' },
       zinc: '#09090b',
-      white: '#f8fafc',
+      white: { light: '#fefefe', DEFAULT: '#f8fafc' },
       slate: '#020617',
       gray: {
         light: '#f1f5f9',
