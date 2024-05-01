@@ -1,61 +1,63 @@
 'use client'
 
-import { RangeFilter, TagsFilter } from '@/components'
+import { RangeFilter } from '@/components'
 // Importa los nuevos componentes
 
 // import GenderFilter from './GenderFilter'
 // import PriceRangeFilter from './PriceRangeFilter'
 // import LocationFilter from './LocationFilter'
-import { Heading } from '@/components/ui'
+import { Heading, Tags } from '@/components/ui'
 import { useState } from 'react'
 
 const brands = [
   {
-    name: 'Todos'
+    name: 'Todos',
+    noVerifyStock: true
   },
   {
-    name: 'Nike'
+    name: 'Nike',
+    noVerifyStock: true
   },
   {
-    name: 'Adidas'
+    name: 'Adidas',
+    noVerifyStock: true
   },
   {
-    name: 'Puma'
+    name: 'Puma',
+    noVerifyStock: true
   }
 ]
 const gender = [
-  { name: 'Hombre' },
-  { name: 'Mujer' },
-  { name: 'Unisex' },
-  { name: 'Niños' }
+  { name: 'Hombre', noVerifyStock: true },
+  { name: 'Mujer', noVerifyStock: true },
+  { name: 'Unisex', noVerifyStock: true },
+  { name: 'Niños', noVerifyStock: true }
 ]
 
 const PRICE_RANGE = [1, 500]
 const SidebarFilters = () => {
-  const [activeBrand, setActiveBrand] = useState('Todos')
-  const [activeGender, setActiveGender] = useState('Unisex')
   const [rangePrices, setRangePrices] = useState(PRICE_RANGE)
 
   return (
     <div className='top-28 lg:sticky'>
-      <Heading className='mb-0'>Filtrar productos</Heading>
+      <Heading>Filtrar productos</Heading>
       <div className='divide-y divide-neutral-300'>
-        <TagsFilter
-          tags={brands}
-          onClick={(itemName: string) => setActiveBrand(itemName)}
-          className={(itemName: string) =>
-            activeBrand === itemName ? 'bg-blue text-white' : 'bg-gray'
-          }
-          text='Marcas'
-        />
-        <TagsFilter
-          tags={gender}
-          onClick={(itemName: string) => setActiveGender(itemName)}
-          className={(itemName: string) =>
-            activeGender === itemName ? 'bg-blue text-white' : 'bg-gray'
-          }
-          text='Género'
-        />
+        <div className='relative flex flex-col space-y-4 pb-8'>
+          <div className='pt-4'>
+            <Heading variant='h2'>Marcas</Heading>
+          </div>
+          <div className='w-full flex flex-wrap justify-between items-center'>
+            <Tags initialState={brands[0]} tags={brands} />
+          </div>
+        </div>
+        <div className='relative flex flex-col space-y-4 pb-8'>
+          <div className='pt-4'>
+            <Heading variant='h2'>Género</Heading>
+          </div>
+          <div className='w-full flex flex-wrap justify-between items-center'>
+            <Tags initialState={gender[1]} tags={gender} />
+          </div>
+        </div>
         <RangeFilter
           ranges={PRICE_RANGE}
           onChange={(value: number | number[]) => {

@@ -7,7 +7,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = ({
-  rounded = 'rounded-full',
+  rounded = 'rounded-md',
   sizeClass = 'h-11 px-4 py-3',
   className = '',
   ...props

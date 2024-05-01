@@ -1,3 +1,4 @@
+import { ROUTES } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -5,17 +6,19 @@ const Header = ({ isLoggedIn = false }) => {
   return (
     <header className='bg-slate sticky top-0 z-50'>
       <div className='container py-4 px-6 flex justify-between items-center'>
-        <div className='flex items-center'>
+        <div className='flex items-center size-auto w-[73px] h-[49px] relative'>
           <Image
             src='/assets/images/logo_solofutbol_1.png'
             alt='Icono'
-            // className='w-8 h-8 mr-4'
-            width={73}
-            height={49}
+            className='absolute object-cover'
+            fill
+            sizes='100vw, 100vh'
+            // width={73}
+            // height={49}
           />
         </div>
         <div className='flex-grow text-center'>
-          <Link href='/products' className='text-white'>
+          <Link href={ROUTES.PRODUCTS} className='text-white'>
             Ver Productos
           </Link>
         </div>

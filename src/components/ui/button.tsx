@@ -21,10 +21,10 @@ const Button = ({
   className = '',
   ...props
 }: HybridButtonProps) => {
-  const buttonClasses = `inline-block px-6 py-3 rounded-full font-semibold focus:outline-none ${
+  const buttonClasses = `inline-block px-6 py-3 rounded-md font-semibold focus:outline-none ${
     variant === 'primary'
-      ? 'bg-gray text-slate'
-      : 'bg-gray-light border-2 border-blue text-blue'
+      ? 'bg-blue-light text-white-light hover:bg-blue hover:text-white'
+      : 'bg-gray-light border-2 border-blue text-blue hover:bg-blue-light hover:text-white hover:border-blue-light'
   } ${className}`
 
   const linkProps = props as AnchorHTMLAttributes<HTMLAnchorElement>
