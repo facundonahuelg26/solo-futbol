@@ -1,8 +1,9 @@
 import React from 'react'
-import ProductCard from '@/components/product-card'
+import { LoadMore, ProductCard, ProductGallery } from '@/components/products'
 import SidebarFilters from '@/components/sidebar-filters'
 import { Search } from '@/components/icons'
 import { Dropdown, Input } from '@/components/ui'
+import { getDataFetch } from '@/service'
 
 const shoes = [
   {
@@ -121,7 +122,8 @@ const shoes = [
   }
 ]
 const orderByMinOrMaxPrice = ['Menor precio', 'Mayor precio']
-const page = () => {
+const Products = async () => {
+  const productsList = await getDataFetch('/list?page=1&limit=9')
   return (
     <div className=''>
       <div className='container relative flex flex-col lg:flex-row' id='body'>
@@ -146,15 +148,12 @@ const page = () => {
               <Dropdown />
             </div>
           </div>
-          <div className='grid flex-1 gap-x-8 gap-y-10 xs:grid-cols-2 lg:grid-cols-3'>
-            {shoes.map((item) => (
-              <ProductCard showPrevPrice product={item} key={item.slug} />
-            ))}
-          </div>
+          <ProductGallery products={productsList} />
+          <LoadMore />
         </div>
       </div>
     </div>
   )
 }
 
-export default page
+export default Products

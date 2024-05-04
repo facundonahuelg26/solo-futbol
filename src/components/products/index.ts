@@ -1,2 +1,5 @@
 export { default as DetailImages } from './detail-images'
 export { default as ProductOptions } from './product-options'
+export { default as ProductCard } from './product-card'
+export { default as LoadMore } from './load-more'
+export { default as ProductGallery } from './product-gallery'
