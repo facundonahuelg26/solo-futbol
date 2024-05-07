@@ -29,12 +29,14 @@ const config: Config = {
       transparent: 'transparent',
       sky: '#7dd3fc',
       blue: { light: '#2563eb', DEFAULT: '#172554' },
+      red: { DEFAULT: '#b91c1c' },
       zinc: '#09090b',
       white: { light: '#fefefe', DEFAULT: '#f8fafc' },
       slate: '#020617',
       gray: {
         light: '#f1f5f9',
-        DEFAULT: '#d1d5db'
+        DEFAULT: '#d1d5db',
+        dark: '#737373'
       }
     }
   },

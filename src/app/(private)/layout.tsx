@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto_Condensed } from 'next/font/google'
-import './globals.css'
-
-const roboto = Roboto_Condensed({ subsets: ['latin'] })
+import { Footer, Header } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${roboto.className} bg-white`}>{children}</body>
-    </html>
+    <>
+      <Header />
+      <main className='min-h-[calc(100vh-78px-56px)]'>{children}</main>
+      <Footer />
+    </>
   )
 }

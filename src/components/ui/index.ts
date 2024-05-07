@@ -1,6 +1,7 @@
 export { default as Heading } from './heading'
 export { default as Tags } from './tags'
 export { default as Input } from './input'
+export { default as Label } from './label'
 export { default as Button } from './button'
 export { default as Dropdown } from './dropdown'
 export { default as Breadcrumbs } from './breadcrumbs'

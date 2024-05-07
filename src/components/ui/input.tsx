@@ -1,20 +1,29 @@
 import type { InputHTMLAttributes } from 'react'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  //   fontClass?: string;
-  sizeClass?: string
-  rounded?: string
+  variant?: 'search' | 'range' | 'form'
 }
 
-const Input = ({
-  rounded = 'rounded-md',
-  sizeClass = 'h-11 px-4 py-3',
-  className = '',
-  ...props
-}: InputProps) => {
+const Input = ({ variant = 'form', ...props }: InputProps) => {
+  let inputClassName = ''
+  switch (variant) {
+    case 'search':
+      inputClassName += 'pl-12 border border-gray outline-gray'
+      break
+    case 'range':
+      inputClassName += ''
+      break
+    case 'form':
+    default:
+      inputClassName += ' border border-gray outline-gray'
+      break
+  }
+
   return (
     <input
-      className={`block w-full focus:ring focus:ring-transparent focus:ring-opacity-25 disabled:bg-neutral-800 ${rounded} ${sizeClass} ${className}`}
+      className={`block w-full pl-4 h-12 py-3 bg-transparent placeholder:text-neutral-500 focus:border-transparent rounded-md focus:ring focus:ring-transparent focus:ring-opacity-25 disabled:bg-neutral-800
+      ${inputClassName}	
+      `}
       {...props}
     />
   )
