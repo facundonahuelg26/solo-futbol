@@ -30,12 +30,15 @@ const ProductCard: FC<ProductCardProps> = ({
           </div>
         )}
         <Link
-          href={`/products/${product.slug}`}
+          // href={`/products/${product.slug}`}
+          href={`/products/${product.id}`}
           className='w-full h-[360px] block relative'
         >
           <Image
-            src={product.coverImage}
-            alt={`${product.shoeName} cover photo`}
+            src={product.download_url}
+            // src={product.coverImage}
+            // alt={`${product.shoeName} cover photo`}
+            alt=''
             fill
             sizes='100vw, 100vh'
             priority
@@ -43,7 +46,7 @@ const ProductCard: FC<ProductCardProps> = ({
           />
         </Link>
       </div>
-      <div className='mt-3'>
+      {/* <div className='mt-3'>
         <div className='flex items-center justify-between'>
           <h3 className='font-semibold'>{product.shoeName}</h3>
           <p
@@ -61,7 +64,7 @@ const ProductCard: FC<ProductCardProps> = ({
             ${product.currentPrice}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

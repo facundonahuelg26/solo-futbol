@@ -1,8 +1,10 @@
 import React from 'react'
-import ProductCard from '@/components/product-card'
+import { LoadMore, ProductCard, ProductGallery } from '@/components/products'
 import SidebarFilters from '@/components/sidebar-filters'
 import { Search } from '@/components/icons'
 import { Dropdown, Input } from '@/components/ui'
+import { getDataFetch } from '@/service'
+import { SearchData } from '@/components'
 
 const shoes = [
   {
@@ -121,7 +123,8 @@ const shoes = [
   }
 ]
 const orderByMinOrMaxPrice = ['Menor precio', 'Mayor precio']
-const page = () => {
+const Products = async () => {
+  const productsList = await getDataFetch('/list?page=1&limit=9')
   return (
     <div className=''>
       <div className='container relative flex flex-col lg:flex-row' id='body'>
@@ -131,30 +134,18 @@ const page = () => {
         <div className='mb-10 shrink-0 border-t lg:mx-4 lg:mb-0 lg:border-t-0' />
         <div className='relative flex-1'>
           <div className='z-10 mb-3 items-center gap-5 space-y-5  py-10 lg:sticky lg:flex lg:space-y-0'>
-            <div className='flex flex-1 items-center gap-2 rounded-md border border-neutral-300 px-4'>
-              <Search className='text-2xl text-neutral-500' />
-              <Input
-                type='password'
-                rounded='rounded-md'
-                placeholder='Buscar...'
-                sizeClass='h-12 px-0 py-3'
-                className='border-transparent bg-transparent placeholder:text-neutral-500 focus:border-transparent'
-              />
-            </div>
+            <SearchData />
             <div className='flex justify-between items-center gap-5'>
-              <span>Ordernar por:</span>
+              <span className='min-w-max'>Ordernar por:</span>
               <Dropdown />
             </div>
           </div>
-          <div className='grid flex-1 gap-x-8 gap-y-10 xs:grid-cols-2 lg:grid-cols-3'>
-            {shoes.map((item) => (
-              <ProductCard showPrevPrice product={item} key={item.slug} />
-            ))}
-          </div>
+          <ProductGallery products={productsList} />
+          <LoadMore />
         </div>
       </div>
     </div>
   )
 }
 
-export default page
+export default Products
