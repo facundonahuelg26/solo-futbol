@@ -1,9 +1,13 @@
+'use client'
 import { LinkForm, PasswordInput, TextInput } from '@/components'
 import { Button, Heading } from '@/components/ui'
+import { useAuth } from '@/features/auth/use-auth'
+
 import { ROUTES } from '@/utils'
 import Image from 'next/image'
 
 const SignIn = () => {
+  const { handleSubmit } = useAuth()
   return (
     <div className='w-full min-h-screen py-16 flex justify-center items-center'>
       <div className='w-full sm:w-3/5 lg:w-1/2 xl:w-2/5 2xl:w-1/4 px-4 sm:px-0 py-8 sm:border-2 border-gray border-dotted rounded'>
@@ -21,7 +25,7 @@ const SignIn = () => {
         </div>
 
         <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-          <form>
+          <form onSubmit={handleSubmit}>
             <TextInput
               label='Correo electrónico'
               id='email'

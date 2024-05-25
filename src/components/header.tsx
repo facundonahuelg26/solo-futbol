@@ -1,3 +1,4 @@
+import SignOut from '@/components/sign-out'
 import { ROUTES } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -35,6 +36,7 @@ const Header = ({ isLoggedIn = false }) => {
           <Link href='/cart' className='text-white mr-4'>
             Carrito
           </Link>
+          <SignOut />
         </div>
       </div>
     </header>
