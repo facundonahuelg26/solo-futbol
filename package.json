@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "next": "14.1.4",
+    "next-auth": "^4.24.7",
     "ramda": "^0.29.1",
     "rc-slider": "^10.5.0",
     "react": "^18",

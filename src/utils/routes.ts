@@ -3,6 +3,6 @@ export const ROUTES = {
   SIGN_UP: '/sign-up',
   PRODUCTS: '/',
   PRODUCT: '/product',
-  ACCOUNT: '/account',
-  CART: '/cart'
+  CART: '/cart',
+  PROFILE: '/profile'
 }
