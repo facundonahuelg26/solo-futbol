@@ -8,7 +8,7 @@ export const getDataFetch = async (endpoint: string) => {
     const res = await fetch(`${ENV_VAR.API_PRODUCTS_URL}${endpoint}`, {
       // next: { revalidate: 10 }
       headers: {
-        Authorization: `Bearer ${session?.user?.token}`
+        Authorization: `Bearer ${session?.user?.accessToken}`
       },
       cache: 'no-store'
     })
