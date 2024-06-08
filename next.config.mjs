@@ -8,7 +8,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'picsum.photos'
+        hostname: process.env.API_IMAGES
       }
     ]
   }
